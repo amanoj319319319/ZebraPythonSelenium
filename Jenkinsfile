@@ -1,5 +1,7 @@
 pipeline {
-    agent { label 'selenium-node' }
+    agent {
+        label 'selenium-node'  // Make sure your Jenkins agent has this label
+    }
 
     environment {
         VENV_DIR = 'jenkinsvenv'
@@ -9,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo '📥 Cloning repository...'
-                git 'https://github.com/amanoj319319319/ZebraPythonSelenium.git'
+                git url: 'https://github.com/amanoj319319319/ZebraPythonSelenium.git', branch: 'master'
             }
         }
 
@@ -23,39 +25,41 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo '📦 Installing Python dependencies...'
-                sh '''
-                    source $VENV_DIR/bin/activate
-                    pip install --upgrade pip
-                    pip install -r requirements.txt
+                sh '''#!/bin/bash
+                source $VENV_DIR/bin/activate
+                pip install --upgrade pip
+                pip install -r requirements.txt
                 '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                echo '✅ Running pytest...'
-                sh '''
-                    source $VENV_DIR/bin/activate
-                    pytest --html=Reports/report.html --self-contained-html
+                echo '🚀 Running tests...'
+                sh '''#!/bin/bash
+                source $VENV_DIR/bin/activate
+                pytest --html=Reports/report.html --self-contained-html
                 '''
             }
         }
 
         stage('Archive Report') {
             steps {
-                echo '🗂 Archiving HTML report...'
-                archiveArtifacts artifacts: 'Reports/report.html', onlyIfSuccessful: true
+                echo '📄 Archiving HTML report...'
+                archiveArtifacts artifacts: 'Reports/report.html', allowEmptyArchive: false
             }
         }
     }
 
     post {
-        always {
-            echo '🎯 CI Pipeline finished'
+        success {
+            echo '✅ Build successful!'
         }
         failure {
             echo '❌ Build failed!'
         }
+        always {
+            echo '🎯 CI Pipeline finished'
+        }
     }
 }
-
