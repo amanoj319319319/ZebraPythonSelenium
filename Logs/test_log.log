@@ -1,0 +1,42 @@
+2025-07-01 19:44:13,645 - INFO - ====== WebDriver manager ======
+2025-07-01 19:44:14,441 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-01 19:44:14,490 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-01 19:44:14,543 - INFO - Driver [C:\Users\amano\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-01 19:44:18,753 - INFO - Opened browser and navigated to https://www.letskodeit.com/login
+2025-07-01 19:44:18,754 - INFO - LoginPage initialized
+2025-07-01 19:44:18,754 - INFO - Attempting login with username: a.manoj16@gmail.com
+2025-07-01 19:44:18,754 - INFO - Entering text: 'a.manoj16@gmail.com' in ('id', 'email')
+2025-07-01 19:44:18,820 - INFO - Entering text: 'Manoj@319319319' in ('id', 'login-password')
+2025-07-01 19:44:18,874 - INFO - Clicking on element: ('id', 'login')
+2025-07-01 19:44:26,104 - INFO - ====== WebDriver manager ======
+2025-07-01 19:44:26,896 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-01 19:44:26,958 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-01 19:44:27,007 - INFO - Driver [C:\Users\amano\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-01 19:44:30,262 - INFO - Opened browser and navigated to https://www.letskodeit.com/login
+2025-07-01 19:44:30,263 - INFO - LoginPage initialized
+2025-07-01 19:44:30,263 - INFO - Attempting login with username: a.manoj16@gmail.commmm
+2025-07-01 19:44:30,263 - INFO - Entering text: 'a.manoj16@gmail.commmm' in ('id', 'email')
+2025-07-01 19:44:30,329 - INFO - Entering text: 'Manoj@319319319319319' in ('id', 'login-password')
+2025-07-01 19:44:30,376 - INFO - Clicking on element: ('id', 'login')
+2025-07-01 19:44:35,475 - INFO - Text at ('id', 'incorrectdetails'): Incorrect login details
+2025-07-01 20:01:51,241 - INFO - ====== WebDriver manager ======
+2025-07-01 20:01:52,078 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-01 20:01:52,131 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-01 20:01:52,179 - INFO - Driver [C:\Users\amano\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-01 20:01:56,478 - INFO - Opened browser and navigated to https://www.letskodeit.com/login
+2025-07-01 20:01:56,479 - INFO - LoginPage initialized
+2025-07-01 20:01:56,479 - INFO - Attempting login with username: a.manoj16@gmail.com
+2025-07-01 20:01:56,479 - INFO - Entering text: 'a.manoj16@gmail.com' in ('id', 'email')
+2025-07-01 20:01:56,536 - INFO - Entering text: 'Manoj@319319319' in ('id', 'login-password')
+2025-07-01 20:01:56,586 - INFO - Clicking on element: ('id', 'login')
+2025-07-01 20:02:09,147 - INFO - ====== WebDriver manager ======
+2025-07-01 20:02:09,943 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-01 20:02:10,016 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-01 20:02:10,062 - INFO - Driver [C:\Users\amano\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-07-01 20:02:14,341 - INFO - Opened browser and navigated to https://www.letskodeit.com/login
+2025-07-01 20:02:14,342 - INFO - LoginPage initialized
+2025-07-01 20:02:14,342 - INFO - Attempting login with username: a.manoj16@gmail.commmm
+2025-07-01 20:02:14,342 - INFO - Entering text: 'a.manoj16@gmail.commmm' in ('id', 'email')
+2025-07-01 20:02:14,403 - INFO - Entering text: 'Manoj@319319319319319' in ('id', 'login-password')
+2025-07-01 20:02:14,452 - INFO - Clicking on element: ('id', 'login')
+2025-07-01 20:02:19,541 - INFO - Text at ('id', 'incorrectdetails'): Incorrect login details
