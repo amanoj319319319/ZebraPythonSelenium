@@ -1,10 +1,9 @@
 pipeline {
-    agent {
-        label 'selenium-node'  // Make sure your Jenkins agent has this label
-    }
+    agent { label 'selenium-node' }
 
     environment {
         VENV_DIR = 'jenkinsvenv'
+        REPORT_PATH = 'Reports/report.html'
     }
 
     stages {
@@ -46,20 +45,38 @@ pipeline {
         stage('Archive Report') {
             steps {
                 echo '📄 Archiving HTML report...'
-                archiveArtifacts artifacts: 'Reports/report.html', allowEmptyArchive: false
+                archiveArtifacts artifacts: "$REPORT_PATH", allowEmptyArchive: false
             }
         }
     }
 
     post {
         success {
-            echo '✅ Build successful!'
+            emailext (
+                subject: "✅ Selenium Test Report - SUCCESS [${env.JOB_NAME} #${env.BUILD_NUMBER}]",
+                body: """<p>Hi,</p>
+                         <p>The Jenkins build <b>#${env.BUILD_NUMBER}</b> completed successfully.</p>
+                         <p>Job: <a href="${env.BUILD_URL}">${env.JOB_NAME}</a></p>
+                         <p>Attached is the test report.</p>""",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+                to: 'bubbududdu0101@gmail.com, ankitakaushik0101@gmail.com',
+                attachmentsPattern: "$REPORT_PATH",
+                mimeType: 'text/html'
+            )
         }
         failure {
-            echo '❌ Build failed!'
+            emailext (
+                subject: "❌ Selenium Test Report - FAILURE [${env.JOB_NAME} #${env.BUILD_NUMBER}]",
+                body: """<p>Hi,</p>
+                         <p>The Jenkins build <b>#${env.BUILD_NUMBER}</b> has failed.</p>
+                         <p>Job: <a href="${env.BUILD_URL}">${env.JOB_NAME}</a></p>
+                         <p>Please check the logs.</p>""",
+                to: 'bubbududdu0101@gmail.com, ankitakaushik0101@gmail.com'
+                mimeType: 'text/html'
+            )
         }
         always {
-            echo '🎯 CI Pipeline finished'
+            echo '🎯 CI Pipeline completed'
         }
     }
 }
