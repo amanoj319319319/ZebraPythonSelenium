@@ -61,7 +61,7 @@ pipeline {
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                 to: 'bubbududdu0101@gmail.com, ankitakaushik0101@gmail.com',
                 attachmentsPattern: "$REPORT_PATH",
-                mimeType: 'text/html'
+                bodyType: 'text/html'
             )
         }
         failure {
@@ -71,8 +71,8 @@ pipeline {
                          <p>The Jenkins build <b>#${env.BUILD_NUMBER}</b> has failed.</p>
                          <p>Job: <a href="${env.BUILD_URL}">${env.JOB_NAME}</a></p>
                          <p>Please check the logs.</p>""",
-                to: 'bubbududdu0101@gmail.com, ankitakaushik0101@gmail.com'
-                mimeType: 'text/html'
+                to: 'bubbududdu0101@gmail.com, ankitakaushik0101@gmail.com',
+                bodyType: 'text/html'
             )
         }
         always {
