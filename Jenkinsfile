@@ -61,7 +61,7 @@ pipeline {
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                 to: 'bubbududdu0101@gmail.com, ankitakaushik0101@gmail.com',
                 attachmentsPattern: "$REPORT_PATH",
-                contentType: 'text/html'
+                mimeType: 'text/html'
             )
         }
         failure {
@@ -72,7 +72,7 @@ pipeline {
                          <p>Job: <a href="${env.BUILD_URL}">${env.JOB_NAME}</a></p>
                          <p>Please check the logs.</p>""",
                 to: 'bubbududdu0101@gmail.com, ankitakaushik0101@gmail.com',
-                contentType: 'text/html'
+                mimeType: 'text/html'
             )
         }
         always {
